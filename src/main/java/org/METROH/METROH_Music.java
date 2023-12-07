@@ -25,13 +25,14 @@ public class METROH_Music {
     }
 
     public static void main(String[] args){
-
-        final GatewayDiscordClient client = DiscordClientBuilder.create(Constants.TOKEN).build()
+       //Hay que poner el token en los argumentos del programa
+        final String TOKEN = args[0];
+        final GatewayDiscordClient client = DiscordClientBuilder.create(TOKEN).build()
                 .login()
                 .block();
         assert client != null;
 
-        //Hay que habilitar la opción "MESSAGE CONTENT INTENT" en el portal de desarrollador
+        //Hay que habilitar la opción "MESSAGE CONTENT INTENT" en el portal de desarrollador de discord
         client.getEventDispatcher().on(MessageCreateEvent.class)
                 .flatMap(event -> {
 

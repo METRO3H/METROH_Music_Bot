@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e28746c-b515-4716-a632-08e97dc13394" name="Changes" comment="ahora si">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/METROH/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/METROH/METROH_Music.java" afterDir="false" />
+    <list default="true" id="3e28746c-b515-4716-a632-08e97dc13394" name="Changes" comment="Funciona XD">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/METROH/Constants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/METROH/METROH_Music.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/METROH/METROH_Music.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +23,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -49,7 +46,6 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -60,7 +56,7 @@
     <configuration name="METROH_Music" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.METROH.METROH_Music" />
       <module name="METROH_Music_Bot" />
-      <option name="PROGRAM_PARAMETERS" value="OTMzODg3Nzg1NzQ2NzAyMzc4.G3Uq8o.eltfxUCXZlGSzaWNPi0sl4KrQAyvUuzBsv0pQA" />
+      <option name="PROGRAM_PARAMETERS" value="MTE4MjIwMzIxOTA0NTI1MzIxMQ.GGkYO4.Z5hUCKDom_NygEhACntUBQxp0f9gfzX5YrCpkg" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.METROH.*" />
@@ -107,12 +103,31 @@
       <option name="project" value="LOCAL" />
       <updated>1701890923998</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Funciona XD">
+      <created>1701937986793</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1701937986793</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ahora si" />
-    <option name="LAST_COMMIT_MESSAGE" value="ahora si" />
+    <MESSAGE value="Funciona XD" />
+    <option name="LAST_COMMIT_MESSAGE" value="Funciona XD" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
