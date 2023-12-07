@@ -6,8 +6,5 @@
 4. Entrar al link autorizador del bot para que este pueda entrar el servidor de interes, donde "APP_ID" es el ID de aplicacion del bot y que se puede encontrar en el portal de desarrollador de discord :    
   
    ```python
-     
     https://discord.com/oauth2/authorize?client_id=APP_ID&scope=
-     
-   
    ```
