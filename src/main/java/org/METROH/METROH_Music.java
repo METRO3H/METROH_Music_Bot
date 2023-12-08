@@ -65,7 +65,6 @@ public class METROH_Music {
 
 
 		final String TOKEN = System.getenv("TOKEN");
-		System.out.println(TOKEN);
 		final GatewayDiscordClient client = DiscordClientBuilder.create(TOKEN).build().login().block();
 		assert client != null;
 
