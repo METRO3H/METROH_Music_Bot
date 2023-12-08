@@ -62,8 +62,10 @@ public class METROH_Music {
 				  .map(content -> Arrays.asList(content.split(" ")))
 				  .doOnNext(command -> playerManager.loadItem(command.get(1), scheduler))
 				  .then());
-		//Hay que poner el token en los argumentos del programa
-		final String TOKEN = args[0];
+
+
+		final String TOKEN = System.getenv("TOKEN");
+		System.out.println(TOKEN);
 		final GatewayDiscordClient client = DiscordClientBuilder.create(TOKEN).build().login().block();
 		assert client != null;
 
