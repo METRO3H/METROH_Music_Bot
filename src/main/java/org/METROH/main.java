@@ -62,6 +62,7 @@ public class main {
                .then());
 
 		final TrackScheduler scheduler = new TrackScheduler(player);
+
 		commands.put("play", event -> Mono.justOrEmpty(event.getMessage().getContent())
 				  .map(content -> Arrays.asList(content.split(" ")))
 				  .doOnNext(command -> playerManager.loadItem(command.get(1), scheduler))

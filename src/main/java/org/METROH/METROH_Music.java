@@ -18,7 +18,7 @@ public class METROH_Music {
 		this.client = DiscordClientBuilder.create(TOKEN).build().login().block();
 		assert this.client != null;
 	}
-	public void Listening(){
+	public void Connect(){
 		this.client.getEventDispatcher().on(MessageCreateEvent.class).flatMap(event -> {
 
 			return Mono.just(event.getMessage().getContent()).flatMap(content -> {
@@ -33,15 +33,12 @@ public class METROH_Music {
 			);
 		}).subscribe();
 	}
-	public void printContent(String content){
-		System.out.println("Content : '" + content + "'");
+	public void onDisconnect(){
+		this.client.onDisconnect().block();
 	}
 
-	public static void handleCommand(String commandName, MessageCreateEvent event) {
-		Command command = (Command) CommandList.getCommand(commandName);
-		if (command != null) {
-			command.execute(event);
-		}
+	public void printContent(String content){
+		System.out.println("Content : '" + content + "'");
 	}
 
 }

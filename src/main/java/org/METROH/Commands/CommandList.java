@@ -7,8 +7,9 @@ public class CommandList {
 	private static final Map<String, Command> commands = new HashMap<>();
 
 	static {
-		commands.put("ping", CommandTasks::pingResponse);
-		// Aquí puedes registrar más comandos...
+		commands.put("ping", CommandTasks::Ping_Response);
+		commands.put("join", CommandTasks::Join_Channel);
+		commands.put("pon", CommandTasks::Play_Music);
 	}
 
 	public static Map<String, Command> getMap(){
