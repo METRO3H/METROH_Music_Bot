@@ -3,17 +3,16 @@ package org.METROH;
 import discord4j.core.DiscordClientBuilder;
 import discord4j.core.GatewayDiscordClient;
 import discord4j.core.event.domain.message.MessageCreateEvent;
-import org.METROH.Commands.Command;
 import org.METROH.Commands.CommandList;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 
-public class METROH_Music {
+public class METROH_MUSIC {
 
 	final GatewayDiscordClient client;
 
-	METROH_Music(){
+	METROH_MUSIC(){
 		final String TOKEN = System.getenv("TOKEN");
 		this.client = DiscordClientBuilder.create(TOKEN).build().login().block();
 		assert this.client != null;
@@ -33,7 +32,7 @@ public class METROH_Music {
 			);
 		}).subscribe();
 	}
-	public void onDisconnect(){
+	public void On_Disconnect(){
 		this.client.onDisconnect().block();
 	}
 
