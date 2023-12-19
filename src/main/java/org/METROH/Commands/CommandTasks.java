@@ -21,7 +21,7 @@ public class CommandTasks {
 				  .flatMap(VoiceState::getChannel)
 				  // join returns a VoiceConnection which would be required if we were
 				  // adding disconnection features, but for now we are just ignoring it.
-				  .flatMap(channel -> channel.join(spec -> spec.setProvider(Audio_Player_Provider.getLavaPlayerAudioProvider())))
+				  .flatMap(VoiceChannel -> VoiceChannel.join().withProvider(Audio_Player_Provider.getLavaPlayerAudioProvider()))
 				  .then();
 	}
 	public static Mono<Void> Play_Music(MessageCreateEvent event){
