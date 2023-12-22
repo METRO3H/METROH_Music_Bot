@@ -23,9 +23,11 @@ public class METROH_MUSIC {
 
 				this.printContent(content);
 
-						  return Flux.fromIterable(CommandList.getMap().entrySet())
-									 // We will be using ! as our "prefix" to any command in the system.
-									 .filter(entry -> content.startsWith('!' + entry.getKey())).flatMap(entry -> entry.getValue().execute(event)).next();
+						  return Flux.fromIterable(CommandList.getMap()
+							     .entrySet())
+						  		 .filter(entry -> content.startsWith('!' + entry.getKey()))
+								 .flatMap(entry -> entry.getValue().execute(event))
+								 .next();
 					  }
 
 			);

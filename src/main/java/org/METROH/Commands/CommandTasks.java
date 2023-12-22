@@ -26,13 +26,15 @@ public class CommandTasks {
 				  .then();
 	}
 	public static Mono<Void> Play_Music(MessageCreateEvent event){
-		return Mono.justOrEmpty(event.getMessage().getContent())
-				  .map(content -> Arrays.asList(content.split(" ")))
-				  .doOnNext(command -> {
-					  AudioPlayerManager AudioPlayerManager = Audio_Player_Provider.getAudioPlayerManager();
-					  AudioPlayerManager.loadItem(command.get(1), Audio_Player_Provider.getScheduler());
-
-				  }
+		return Mono.justOrEmpty(event.getMessage()
+				.getContent()).map(content -> Arrays.asList(content.split(" ")))
+				  .doOnNext(command ->
+						  Audio_Player_Provider
+							  .getAudioPlayerManager()
+							  .loadItem(
+								  command.get(1),
+								  Audio_Player_Provider.getScheduler()
+							  )
 				  )
 				  .then();
 	}
