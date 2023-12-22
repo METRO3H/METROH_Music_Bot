@@ -12,8 +12,7 @@ public class METROH_MUSIC {
 
 	final GatewayDiscordClient client;
 
-	METROH_MUSIC(){
-		final String TOKEN = System.getenv("TOKEN");
+	METROH_MUSIC(String TOKEN){
 		this.client = DiscordClientBuilder.create(TOKEN).build().login().block();
 		assert this.client != null;
 	}
