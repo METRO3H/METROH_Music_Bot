@@ -22,7 +22,7 @@ public class METROH_MUSIC {
 
 			return Mono.just(event.getMessage().getContent()).flatMap(content -> {
 
-				printContent(content);
+				this.printContent(content);
 
 						  return Flux.fromIterable(CommandList.getMap().entrySet())
 									 // We will be using ! as our "prefix" to any command in the system.
@@ -36,7 +36,7 @@ public class METROH_MUSIC {
 		this.client.onDisconnect().block();
 	}
 
-	public void printContent(String content){
+	private void printContent(String content){
 		System.out.println("Content : '" + content + "'");
 	}
 

@@ -8,7 +8,7 @@ import com.sedmelluq.discord.lavaplayer.track.playback.NonAllocatingAudioFrameBu
 import discord4j.voice.AudioProvider;
 
 public class Audio_Player_Provider {
-	final AudioPlayerManager playerManager;
+	final AudioPlayerManager AudioPlayerManager;
 	final TrackScheduler scheduler;
 	final AudioPlayer player;
 	AudioProvider LavaPlayerAudioProvider;
@@ -16,17 +16,17 @@ public class Audio_Player_Provider {
 
 	public Audio_Player_Provider(){
 		// Creates AudioPlayer instances and translates URLs to AudioTrack instances
-		playerManager = new DefaultAudioPlayerManager();
+		AudioPlayerManager = new DefaultAudioPlayerManager();
 
 		// This is an optimization strategy that Discord4J can utilize.
 		// It is not important to understand
-		playerManager.getConfiguration().setFrameBufferFactory(NonAllocatingAudioFrameBuffer::new);
+		AudioPlayerManager.getConfiguration().setFrameBufferFactory(NonAllocatingAudioFrameBuffer::new);
 
 		// Allow playerManager to parse remote sources like YouTube links
-		AudioSourceManagers.registerRemoteSources(playerManager);
+		AudioSourceManagers.registerRemoteSources(AudioPlayerManager);
 
 		// Create an AudioPlayer so Discord4J can receive audio data
-		player = playerManager.createPlayer();
+		player = AudioPlayerManager.createPlayer();
 
 		// We will be creating LavaPlayerAudioProvider in the next step
 		LavaPlayerAudioProvider = new LavaPlayerAudioProvider(player);
@@ -34,8 +34,8 @@ public class Audio_Player_Provider {
 		scheduler = new TrackScheduler(player);
 	}
 
-	public AudioPlayerManager getPlayerManager() {
-		return playerManager;
+	public AudioPlayerManager getAudioPlayerManager() {
+		return AudioPlayerManager;
 	}
 
 	public AudioPlayer getPlayer() {

@@ -1,5 +1,6 @@
 package org.METROH.Commands;
 
+import com.sedmelluq.discord.lavaplayer.player.AudioPlayerManager;
 import discord4j.core.event.domain.message.MessageCreateEvent;
 import discord4j.core.object.VoiceState;
 import discord4j.core.object.entity.Member;
@@ -27,7 +28,12 @@ public class CommandTasks {
 	public static Mono<Void> Play_Music(MessageCreateEvent event){
 		return Mono.justOrEmpty(event.getMessage().getContent())
 				  .map(content -> Arrays.asList(content.split(" ")))
-				  .doOnNext(command -> Audio_Player_Provider.getPlayerManager().loadItem(command.get(1), Audio_Player_Provider.getScheduler()))
+				  .doOnNext(command -> {
+					  AudioPlayerManager AudioPlayerManager = Audio_Player_Provider.getAudioPlayerManager();
+					  AudioPlayerManager.loadItem(command.get(1), Audio_Player_Provider.getScheduler());
+
+				  }
+				  )
 				  .then();
 	}
 

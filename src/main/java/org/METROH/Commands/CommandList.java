@@ -15,8 +15,5 @@ public class CommandList {
 	public static Map<String, Command> getMap(){
 		return commands;
 	}
-	public static Command getCommand(String name) {
 
-		return commands.get(name);
-	}
 }
