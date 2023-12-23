@@ -8,12 +8,30 @@ import org.METROH.Audio_Player.Audio_Player_Provider;
 import reactor.core.publisher.Mono;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class CommandTasks {
 	private static final Audio_Player_Provider Audio_Player_Provider = new Audio_Player_Provider();
 
 	public static Mono<Void> Ping_Response(MessageCreateEvent event) {
 		return event.getMessage().getChannel().flatMap(channel -> channel.createMessage("Pong!")).then();
+	}
+	public static Mono<Void> Run_Test(MessageCreateEvent event){
+		String test_parameter = Arrays.asList(event.getMessage().getContent().split(" ")).get(1);
+
+		if(Objects.equals(test_parameter, "1")){
+			return event.getMessage()
+				.getChannel()
+				.flatMap(channel -> channel.createMessage("!pon https://www.youtube.com/watch?v=BEKRMPf15Wk"))
+				.then();
+		}
+		else{
+			return event.getMessage()
+				.getChannel()
+				.flatMap(channel -> channel.createMessage("!pon https://www.youtube.com/watch?v=YjjWZpf_jSs"))
+				.then();
+		}
+
 	}
 	public static Mono<Void> Join_Channel(MessageCreateEvent event){
 

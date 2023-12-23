@@ -9,7 +9,7 @@ import discord4j.voice.AudioProvider;
 
 public class Audio_Player_Provider {
 	final AudioPlayerManager AudioPlayerManager;
-	final TrackScheduler scheduler;
+	final Scheduler scheduler;
 	final AudioPlayer player;
 	AudioProvider LavaPlayerAudioProvider;
 
@@ -27,11 +27,12 @@ public class Audio_Player_Provider {
 
 		// Create an AudioPlayer so Discord4J can receive audio data
 		player = AudioPlayerManager.createPlayer();
+		player.addListener(new AudioTrackScheduler(player));
 
 		// We will be creating LavaPlayerAudioProvider in the next step
 		LavaPlayerAudioProvider = new LavaPlayerAudioProvider(player);
 
-		scheduler = new TrackScheduler(player);
+		scheduler = new Scheduler(player);
 	}
 
 	public AudioPlayerManager getAudioPlayerManager() {
@@ -46,7 +47,7 @@ public class Audio_Player_Provider {
 		return LavaPlayerAudioProvider;
 	}
 
-	public TrackScheduler getScheduler() {
+	public Scheduler getScheduler() {
 		return scheduler;
 	}
 }
